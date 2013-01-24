@@ -17,3 +17,9 @@ This is how it works: When the program launches, you input your number, precedin
 ## Quit
     q
 
+## Install and uninstall
+    sudo make install
+    sudo make uninstall
+
+Basically copies the binary file to `/usr/local/bin`.
+
