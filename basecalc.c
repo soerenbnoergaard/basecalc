@@ -6,7 +6,7 @@
 #define ARR_LEN 32
 /* -------------------- PROTOTYPES ------------------------------------------ */
 /* GENERAL FUNCTIONS */
-void ui(); /* TODO */
+void ui();
 char nibbleToHex(char*);
 void hexToNibble(char, char*);
 
@@ -25,10 +25,10 @@ int main(int argc, const char *argv[]) {
 char nibbleToHex(char* nibble){
   int num = 0;
   char hex;
-  if (nibble[0] == '1') num += 8; // If not 1, then either 0 or undefined (0).
-  if (nibble[1] == '1') num += 4;
-  if (nibble[2] == '1') num += 2;
-  if (nibble[3] == '1') num += 1;
+  if (!(nibble[0] == '0')) num += 8; // Everything but 0, is true (1)
+  if (!(nibble[1] == '0')) num += 4;
+  if (!(nibble[2] == '0')) num += 2;
+  if (!(nibble[3] == '0')) num += 1;
 
   if (num >= 0 && num <=9){
     hex = num+48;
